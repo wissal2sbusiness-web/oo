@@ -9,13 +9,13 @@
     :root {
       --bg-dark: #030102;
       --gold-glow: #ffd700;
-      --red-neon: #ff1a40;
-      --red-soft: #ff4d6d;
+      --pink-neon: #ff66b2;
+      --pink-soft: #ff99cc;
       --text-main: #fff5f8;
       --text-muted: #d9b8cb;
-      --card-bg: rgba(12, 2, 5, 0.82);
-      --card-border: rgba(255, 26, 64, 0.4);
-      --icon-bg: rgba(30, 4, 10, 0.95);
+      --card-bg: rgba(15, 3, 8, 0.88);
+      --card-border: rgba(255, 102, 178, 0.5);
+      --icon-bg: rgba(35, 5, 18, 0.95);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -29,7 +29,7 @@
       user-select: none;
     }
 
-    /* Cinematic Video Background */
+    /* Cinematic Video Background - No Blur */
     .bg-video-container {
       position: fixed;
       inset: 0;
@@ -53,9 +53,7 @@
     .bg-overlay {
       position: fixed;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(15, 2, 5, 0.5) 0%, rgba(3, 1, 2, 0.94) 100%);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
+      background: rgba(3, 1, 2, 0.45);
       z-index: -2;
     }
 
@@ -75,9 +73,9 @@
       justify-content: center;
       z-index: 1000;
       padding: 20px;
-      background: rgba(3, 1, 2, 0.96);
-      backdrop-filter: blur(30px);
-      -webkit-backdrop-filter: blur(30px);
+      background: rgba(3, 1, 2, 0.90);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       animation: fadeInGate 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
@@ -87,34 +85,34 @@
     }
 
     .age-card {
-      background: linear-gradient(145deg, rgba(25, 5, 12, 0.95), rgba(8, 1, 4, 0.98));
-      border: 1px solid var(--red-neon);
-      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(30, 5, 20, 0.95), rgba(10, 1, 7, 0.98));
+      border: 1.5px solid var(--pink-neon);
+      border-radius: 30px;
       padding: 48px 32px;
-      max-width: 370px;
+      max-width: 380px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 26, 64, 0.25);
-      animation: cardPulseAlt 3s infinite alternate;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(255, 102, 178, 0.3);
+      animation: cardPulsePink 3s infinite alternate;
     }
 
-    @keyframes cardPulseAlt {
-      0% { border-color: rgba(255, 26, 64, 0.4); box-shadow: 0 25px 60px rgba(0,0,0,0.9), 0 0 30px rgba(255,26,64,0.2); }
-      100% { border-color: rgba(255, 215, 0, 0.8); box-shadow: 0 25px 60px rgba(0,0,0,0.9), 0 0 50px rgba(255,215,0,0.35); }
+    @keyframes cardPulsePink {
+      0% { border-color: rgba(255, 102, 178, 0.4); box-shadow: 0 25px 60px rgba(0,0,0,0.9), 0 0 25px rgba(255,102,178,0.2); }
+      100% { border-color: rgba(255, 215, 0, 0.7); box-shadow: 0 25px 60px rgba(0,0,0,0.9), 0 0 45px rgba(255,102,178,0.4); }
     }
 
     .lock-icon-wrapper {
-      width: 60px;
-      height: 60px;
+      width: 65px;
+      height: 65px;
       background: var(--icon-bg);
-      border: 1px solid var(--red-neon);
-      border-radius: 18px;
+      border: 1.5px solid var(--pink-neon);
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 24px;
-      color: var(--red-soft);
-      box-shadow: inset 0 0 20px rgba(255, 26, 64, 0.4);
+      margin: 0 auto 22px;
+      color: var(--pink-soft);
+      box-shadow: inset 0 0 20px rgba(255, 102, 178, 0.4);
       animation: iconWiggle 2s infinite ease-in-out;
     }
 
@@ -125,47 +123,51 @@
     }
 
     .age-card h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 26px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: var(--red-soft);
-      text-shadow: 0 0 10px rgba(255,26,64,0.4);
+      font-family: 'Great Vibes', cursive;
+      font-size: 38px;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: #ff99cc;
+      text-shadow: 0 0 15px rgba(255, 102, 178, 0.6);
+      letter-spacing: 1.5px;
     }
 
     .age-card p {
-      font-size: 14px;
+      font-size: 13.5px;
       line-height: 1.6;
       color: var(--text-muted);
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       font-weight: 300;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
     }
 
     .btn-yes {
       display: block;
       width: 100%;
-      background: linear-gradient(135deg, var(--red-neon), #80001a);
+      background: linear-gradient(135deg, #ff3385, #800040);
       color: #fff;
       border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 16px;
       padding: 16px;
       font-size: 15px;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 10px 25px rgba(255, 26, 64, 0.4);
+      box-shadow: 0 10px 25px rgba(255, 51, 133, 0.4);
+      text-transform: uppercase;
     }
 
     .btn-yes:hover {
-      background: linear-gradient(135deg, #ff335c, #990022);
+      background: linear-gradient(135deg, #ff4da6, #99004d);
       transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(255, 26, 64, 0.7);
+      box-shadow: 0 15px 35px rgba(255, 51, 133, 0.7);
     }
 
     .btn-no {
       display: block;
-      margin-top: 20px;
+      margin-top: 18px;
       color: #b3869f;
       font-size: 13px;
       text-decoration: none;
@@ -174,10 +176,11 @@
       border: none;
       width: 100%;
       font-family: inherit;
+      transition: color 0.3s ease;
     }
 
     .btn-no:hover {
-      color: var(--red-soft);
+      color: var(--pink-soft);
       text-decoration: underline;
     }
 
@@ -201,44 +204,15 @@
     .profile-section {
       text-align: center;
       margin-bottom: 32px;
-    }
-
-    .avatar-container {
-      position: relative;
-      width: 115px;
-      height: 115px;
-      margin: 0 auto 16px;
-    }
-
-    .avatar {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      border: 2.5px solid var(--red-neon);
-      padding: 3px;
-      box-shadow: 0 0 40px rgba(255, 26, 64, 0.5);
-      background: transparent;
-      animation: avatarBreath 4s ease-in-out infinite alternate;
-    }
-
-    @keyframes avatarBreath {
-      0% { box-shadow: 0 0 25px rgba(255, 26, 64, 0.3); border-color: var(--gold-glow); }
-      100% { box-shadow: 0 0 50px rgba(255, 26, 64, 0.8); border-color: var(--red-neon); }
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
+      padding-top: 10px;
     }
 
     .name {
       font-family: 'Great Vibes', cursive;
-      font-size: 52px;
+      font-size: 58px;
       color: #ff99aa;
       letter-spacing: 2px;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
       text-shadow: 0 0 25px rgba(255, 26, 64, 0.7);
       animation: textGlow 3s ease-in-out infinite alternate;
     }
@@ -264,11 +238,11 @@
       font-weight: 800;
       font-size: 16.5px;
       color: #ffffff;
-      background: linear-gradient(135deg, rgba(255, 26, 64, 0.25), rgba(255, 215, 0, 0.15));
-      border: 1px solid var(--red-neon);
+      background: linear-gradient(135deg, rgba(255, 102, 178, 0.25), rgba(255, 215, 0, 0.15));
+      border: 1px solid var(--pink-neon);
       padding: 5px 16px;
       border-radius: 50px;
-      box-shadow: 0 0 20px rgba(255, 26, 64, 0.3);
+      box-shadow: 0 0 20px rgba(255, 102, 178, 0.3);
       letter-spacing: 0.5px;
     }
 
@@ -344,8 +318,8 @@
     .link-card:hover {
       transform: translateY(-6px) scale(1.04);
       background: rgba(25, 4, 10, 0.98);
-      border-color: var(--red-neon);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 26, 64, 0.6);
+      border-color: var(--pink-neon);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 102, 178, 0.6);
     }
 
     .link-icon {
@@ -479,56 +453,42 @@
 </head>
 <body>
 
-  <!-- Background Video -->
+  <!-- Background Video (No Blur) -->
   <div class="bg-video-container">
-    <video id="bg-vid" loop playsinline class="bg-video">
+    <video id="bg-vid" autoplay muted loop playsinline class="bg-video">
       <source src="bg.mp4" type="video/mp4">
     </video>
   </div>
   <div class="bg-overlay"></div>
   <canvas id="particles"></canvas>
 
-  <!-- Interactive 2-Step Gate -->
+  <!-- Single Interactive Gate -->
   <div id="age-gate">
-    <!-- Step 1: 18+ Warning -->
+    <!-- Welcome Card -->
     <div id="step-1" class="age-card">
-      <div class="lock-icon-wrapper">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-        </svg>
-      </div>
-      <h1>Entering the dark side...</h1>
-      <p>Dark & spicy alt content ahead (18+). Are you ready to sin?</p>
-      <button class="btn-yes" onclick="goToStep2()">YES, I'M 18+</button>
-      <button class="btn-no" onclick="showReject('leave')">Leave page</button>
-    </div>
-
-    <!-- Step 2: Good Boy Prompt -->
-    <div id="step-2" class="age-card" style="display: none;">
       <div class="lock-icon-wrapper">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
         </svg>
       </div>
-      <h1>You're such a good boy...</h1>
-      <p>Prove you know how to behave with me 🖤</p>
-      <button class="btn-yes" onclick="enterSite()">YES MOMMY 🖤</button>
-      <button class="btn-no" onclick="showReject('badboy')">I'm a bad boy</button>
+      <h1>Wissal's World 🖤</h1>
+      <p>Step into my dark & private universe (18+). Are you ready to enter?</p>
+      <button class="btn-yes" onclick="enterSite()">ENTER NOW 🖤</button>
+      <button class="btn-no" onclick="showReject('leave')">Leave page</button>
     </div>
 
     <!-- Reject Message Screen -->
     <div id="step-reject" class="age-card" style="display: none;">
-      <div class="lock-icon-wrapper" style="color: var(--red-neon);">
+      <div class="lock-icon-wrapper" style="color: var(--pink-neon);">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
           <line x1="15" y1="9" x2="9" y2="15"></line>
           <line x1="9" y1="9" x2="15" y2="15"></line>
         </svg>
       </div>
-      <h1 id="reject-title">Leaving so soon?</h1>
-      <p id="reject-text" style="white-space: pre-line;">Such a fragile little boy...
-i only keep the ones who spoil me the rest are just noise to me 🖤</p>
+      <h1 style="font-size: 32px;">Leaving so soon?</h1>
+      <p id="reject-text" style="white-space: pre-line; margin-top: 10px;">Such a fragile little boy...
+broke boys don't deserve my time 🖤</p>
     </div>
   </div>
 
@@ -536,11 +496,6 @@ i only keep the ones who spoil me the rest are just noise to me 🖤</p>
   <div id="main-content">
     
     <div class="profile-section">
-      <div class="avatar-container">
-        <div class="avatar">
-          <img src="profile.jpg" alt="wissal">
-        </div>
-      </div>
       <div class="name">Wissal</div>
       <div class="tagline">
         <div class="followers-box">
@@ -628,27 +583,7 @@ i only keep the ones who spoil me the rest are just noise to me 🖤</p>
         <span>. social me</span>
       </div>
 
-      <!-- 4. Facebook -->
-      <a href="https://www.facebook.com/share/1Dj4zaQKpj/?mibextid=wwXIfr" class="link-card" target="_blank">
-        <div class="link-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-          </svg>
-        </div>
-        <div class="link-content">
-          <div class="link-title-row">
-            <span class="badge-pill badge-gold">Connect</span>
-            <span class="tag-text">Facebook</span>
-          </div>
-          <div class="link-title">Facebook</div>
-          <span class="link-desc">useless</span>
-        </div>
-        <div class="link-arrow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </div>
-      </a>
-
-      <!-- 5. Instagram -->
+      <!-- 4. Instagram -->
       <a href="https://www.instagram.com/wsloffcial" class="link-card" target="_blank">
         <div class="link-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -670,7 +605,47 @@ i only keep the ones who spoil me the rest are just noise to me 🖤</p>
         </div>
       </a>
 
-      <!-- 6. Threads -->
+      <!-- 5. TikTok -->
+      <a href="https://www.tiktok.com/@wesuie" class="link-card" target="_blank">
+        <div class="link-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v3a3 3 0 0 1-3-3v7a8 8 0 1 1-8-8v3a5 5 0 0 0 5 5z"></path>
+          </svg>
+        </div>
+        <div class="link-content">
+          <div class="link-title-row">
+            <span class="badge-pill badge-gold">New</span>
+            <span class="tag-text">On TikTok</span>
+          </div>
+          <div class="link-title">TikTok</div>
+          <span class="link-desc">useless</span>
+        </div>
+        <div class="link-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </div>
+      </a>
+
+      <!-- 6. Facebook -->
+      <a href="https://www.facebook.com/share/1Dj4zaQKpj/?mibextid=wwXIfr" class="link-card" target="_blank">
+        <div class="link-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </div>
+        <div class="link-content">
+          <div class="link-title-row">
+            <span class="badge-pill badge-gold">Connect</span>
+            <span class="tag-text">Facebook</span>
+          </div>
+          <div class="link-title">Facebook</div>
+          <span class="link-desc">useless</span>
+        </div>
+        <div class="link-arrow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </div>
+      </a>
+
+      <!-- 7. Threads -->
       <a href="https://www.threads.com/@wsl2o?igshid=NTc4MTIwNjQ2YQ==" class="link-card" target="_blank">
         <div class="link-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -691,26 +666,6 @@ i only keep the ones who spoil me the rest are just noise to me 🖤</p>
         </div>
       </a>
 
-      <!-- 7. TikTok -->
-      <a href="https://www.tiktok.com/@wesuie" class="link-card" target="_blank">
-        <div class="link-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5v3a3 3 0 0 1-3-3v7a8 8 0 1 1-8-8v3a5 5 0 0 0 5 5z"></path>
-          </svg>
-        </div>
-        <div class="link-content">
-          <div class="link-title-row">
-            <span class="badge-pill badge-gold">New</span>
-            <span class="tag-text">On TikTok</span>
-          </div>
-          <div class="link-title">TikTok</div>
-          <span class="link-desc">useless</span>
-        </div>
-        <div class="link-arrow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </div>
-      </a>
-
     </div>
 
     <!-- Footer -->
@@ -721,48 +676,11 @@ i only keep the ones who spoil me the rest are just noise to me 🖤</p>
   </div>
 
   <script>
-    function goToStep2() {
-      const vid = document.getElementById('bg-vid');
-      vid.muted = false;
-      vid.play().catch(e => console.log(e));
-
-      const step1 = document.getElementById('step-1');
-      const step2 = document.getElementById('step-2');
-      
-      step1.style.opacity = '0';
-      step1.style.transform = 'scale(0.95)';
-      step1.style.transition = 'all 0.4s ease';
-      
-      setTimeout(() => {
-        step1.style.display = 'none';
-        step2.style.display = 'block';
-        step2.style.opacity = '0';
-        step2.style.transform = 'scale(1.05)';
-        step2.style.transition = 'all 0.4s ease';
-        setTimeout(() => {
-          step2.style.opacity = '1';
-          step2.style.transform = 'scale(1)';
-        }, 50);
-      }, 400);
-    }
-
     function showReject(type) {
       const step1 = document.getElementById('step-1');
-      const step2 = document.getElementById('step-2');
       const reject = document.getElementById('step-reject');
-      const rejectTitle = document.getElementById('reject-title');
-      const rejectText = document.getElementById('reject-text');
-
-      if (type === 'badboy') {
-        rejectTitle.innerText = "Calling yourself a bad boy?";
-        rejectText.innerHTML = "Cute.<br>But if you can't spoil me, you're just another pathetic puppy.<br>I don't care about empty words.";
-      } else {
-        rejectTitle.innerText = "Leaving so soon?";
-        rejectText.innerHTML = "Such a fragile little boy...<br>broke boys don't deserve my time 🖤";
-      }
       
       step1.style.display = 'none';
-      step2.style.display = 'none';
       reject.style.display = 'block';
       reject.style.opacity = '0';
       reject.style.transform = 'scale(0.95)';
@@ -839,7 +757,7 @@ i only keep the ones who spoil me the rest are just noise to me 🖤</p>
           }
         }
         draw() {
-          ctx.fillStyle = `rgba(255, 215, 0, ${this.opacity})`;
+          ctx.fillStyle = `rgba(255, 102, 178, ${this.opacity})`;
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
           ctx.fill();
